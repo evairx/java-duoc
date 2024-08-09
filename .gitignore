@@ -2,4 +2,4 @@ notebooks/data
 .vscode
 notebooks/cifar_net.pth
 .ipynb_checkpoints/
-target/classes/com/evairx/
+*.class

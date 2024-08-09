@@ -77,7 +77,7 @@ public class Funcciones {
             }
 
             System.out.println();
-            System.out.println("Total Sueldos:" + total);
+            System.out.println("Total Sueldos: $" + total);
             System.out.print("Precione cualquier tecla para continuar...");
             input.nextLine();
         }
@@ -93,11 +93,36 @@ public class Funcciones {
         } else {
             int max = Collections.max(sueldos);
             int min = Collections.min(sueldos);
-    
+            double geometrica = Math.pow(sueldos.get(0)*sueldos.get(1)*sueldos.get(2)*sueldos.get(3)*sueldos.get(4)*sueldos.get(5)*sueldos.get(6)*sueldos.get(7)*sueldos.get(8)*sueldos.get(9), 1.0/10.0);
+            
+            int total = 0;
+
             System.out.println("Sueldo Mas Alto: " + max);
             System.out.println("Sueldo Mas Bajo: " + min);
-            System.out.println("Promedio De Sueldos: 0");
-            System.out.println("Media Geometrica: ");
+            System.out.println("Promedio De Sueldos: $" + total);
+            System.out.println("Media Geometrica: " + (int) geometrica);
+            System.out.print("Precione cualquier tecla para continuar...");
+            input.nextLine();
+        }
+    }
+
+    public void reporteSueldos(List<Integer> sueldos, List<String> trabajadores) {
+        Scanner input = new Scanner(System.in);
+
+        if (sueldos.size() == 0) {
+            System.out.println("no hay sueldos, porfavor asigne los sueldos aleatorio");
+            System.out.print("Precione cualquier tecla para continuar...");
+            input.nextLine();
+        } else {
+            System.out.println("Nombre Empleado\t\tSueldo Base\tDescuento Salud\tDescuento AFP\tSueldo Liquido");
+
+            for(int i=0;i<sueldos.size();i++) {
+                int desSalud = (int)(sueldos.get(i)*0.07);
+                int desAfp = (int)(sueldos.get(i)*0.12);
+                int sueldoLiquido = (int)(sueldos.get(i)-desSalud-desAfp);
+                System.out.println(trabajadores.get(i) + "\t\t" + sueldos.get(i) + "\t\t" + desSalud + "\t\t" + desAfp + "\t\t" + sueldoLiquido );
+            }
+            
             System.out.print("Precione cualquier tecla para continuar...");
             input.nextLine();
         }

@@ -27,6 +27,11 @@ public class App {
         boolean menu = false;
 
         while(!menu) {
+            System.out.println("1. Asignar Sueldos Aleatorios");
+            System.out.println("2. Clasificar sueldos");
+            System.out.println("3. Ver estadisticas");
+            System.out.println("4. Reporte sueldos");
+            System.out.println("5. Salir del programa");
             System.out.print("Ingrese la opcion: ");
             int opc = input.nextInt();
 
@@ -37,6 +42,8 @@ public class App {
             } else if (opc == 3) {
                 fun.verEstadisticas(sueldos);
             } else if (opc == 4) {
+                fun.reporteSueldos(sueldos, trabajadores);
+            } else if (opc == 5) {
                 menu = true;
             } else {
                 System.out.println("Ingrese una opcion valida");
