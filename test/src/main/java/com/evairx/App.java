@@ -1,5 +1,6 @@
 package com.evairx;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -8,7 +9,7 @@ public class App {
         Funcciones fun = new Funcciones();
         Scanner input = new Scanner(System.in);
 
-        String[] trabajadores = {
+        List<String> trabajadores = new ArrayList<>(Arrays.asList(
             "Juan Pérez",
             "María García",
             "Carlos López",
@@ -19,7 +20,7 @@ public class App {
             "Isabel Gómez",
             "Francisco Díaz",
             "Elena Fernández"
-        };
+        ));
 
         List<Integer> sueldos = new ArrayList<>();
 
@@ -37,6 +38,8 @@ public class App {
                 fun.verEstadisticas(sueldos);
             } else if (opc == 4) {
                 menu = true;
+            } else {
+                System.out.println("Ingrese una opcion valida");
             }
         }
         

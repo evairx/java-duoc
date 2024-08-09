@@ -16,14 +16,13 @@ public class Funcciones {
         System.out.println("Suelados aleatorios asignados correctamente");
     }
 
-    public void clasificarSueldos(List<Integer> sueldos, String[] trabajadores) {
+    public void clasificarSueldos(List<Integer> sueldos, List<String> trabajadores) {
         Scanner input = new Scanner(System.in);
 
         if (sueldos.size() == 0) {
             System.out.println("no hay sueldos, porfavor asigne los sueldos aleatorio");
             System.out.print("Precione cualquier tecla para continuar...");
             input.nextLine();
-            input.close();
         } else {
             int menorValor = 0;
             int medioValor = 0;
@@ -38,15 +37,15 @@ public class Funcciones {
             for(int i=0;i<10;i++) {
                 if(sueldos.get(i) < 800000) {
                     menorValor+=1;
-                    menor.add(trabajadores[i] + "\t\t$" + sueldos.get(i));
+                    menor.add(trabajadores.get(i) + "\t\t$" + sueldos.get(i));
                     total += sueldos.get(i);
                 } else if (sueldos.get(i) >= 800000 && sueldos.get(i) <= 2000000) {
                     medioValor+=1;
-                    medio.add(trabajadores[i] + "\t\t$" + sueldos.get(i));
+                    medio.add(trabajadores.get(i) + "\t\t$" + sueldos.get(i));
                     total += sueldos.get(i);
                 } else if (sueldos.get(i) > 2000000) {
                     altoValor+=1;
-                    alto.add(trabajadores[i] + "\t\t$" + sueldos.get(i));
+                    alto.add(trabajadores.get(i) + "\t\t$" + sueldos.get(i));
                     total += sueldos.get(i);
                 }
             }
@@ -81,7 +80,6 @@ public class Funcciones {
             System.out.println("Total Sueldos:" + total);
             System.out.print("Precione cualquier tecla para continuar...");
             input.nextLine();
-            input.close();
         }
     }
 
@@ -92,7 +90,6 @@ public class Funcciones {
             System.out.println("no hay sueldos, porfavor asigne los sueldos aleatorio");
             System.out.print("Precione cualquier tecla para continuar...");
             input.nextLine();
-            input.close();
         } else {
             int max = Collections.max(sueldos);
             int min = Collections.min(sueldos);
@@ -101,6 +98,8 @@ public class Funcciones {
             System.out.println("Sueldo Mas Bajo: " + min);
             System.out.println("Promedio De Sueldos: 0");
             System.out.println("Media Geometrica: ");
+            System.out.print("Precione cualquier tecla para continuar...");
+            input.nextLine();
         }
     }
 }
